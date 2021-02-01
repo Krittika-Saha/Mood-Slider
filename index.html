@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- This isn't my code, it's from - Coding By CodingNepal - youtube.com/codingnepal -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Range Slider</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <h1 id='title'>Mood for <span id='weekday'></span></h1>
+  <div class="wrapper">
+      <div class="emoji">😄</div>
+      
+    <div class="slider center"><b><span style="color:green">Yay!</span></b>
+      <input type="range" min="0" value="0" max="10"><b><span style='color:red'>Go Away</span></b>
+    </div>
+  </div>
+
+  <script>
+    const range = document.querySelector('input');
+const div = document.querySelector('.emoji');
+const mojis = ['😄','🙂','😐','😑','☹️','😩','😠','😡','🤢','😤','💩'];
+
+range.addEventListener('input', (e) => {
+  let rangeValue = e.target.value;
+  div.textContent = mojis[rangeValue];
+});
+    var today = new Date().getDay();
+    var days = {'0': 'Sunday', 
+    '1': 'Monday',
+    '2': 'Tuesday',
+    '3': 'Wednesday',
+    '4': 'Thursday',
+    '5': 'Friday',
+    '6': 'Saturday',
+  }
+  document.getElementById("weekday").innerHTML = days[String(today)]
+  </script>
+
+</body>
+</html>
